@@ -72,7 +72,7 @@ def sort_files_and_directories(contents, files={}):
 # determine if file should be downloaded - check for new datasets and most current file for exisiting datasets
 def filter(data_file, files):
     # identify the dataset by the file name prefix
-    dataset = data_file['name'][:data_file['name'].index('_20')]
+    dataset = data_file['name']
     if dataset not in files or data_file['mtime'] > files[dataset]['age']:
         files[dataset] = {'name': data_file['name'], 'url': data_file['url'], 'age': data_file['mtime']}
 
